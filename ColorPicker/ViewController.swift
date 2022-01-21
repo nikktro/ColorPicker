@@ -50,7 +50,7 @@ class ViewController: UIViewController {
         blue = CGFloat(sender.value)
     }
     
-    func updateColor() {
+    private func updateColor() {
         resultColor.backgroundColor = UIColor(red: red,
                                               green: green,
                                               blue: blue,
