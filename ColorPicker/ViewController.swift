@@ -12,22 +12,29 @@ class ViewController: UIViewController {
     @IBOutlet var redLabel: UILabel!
     @IBOutlet var greenLabel: UILabel!
     @IBOutlet var blueLabel: UILabel!
+    
     @IBOutlet var resultColor: UIView!
     
-    var red: CGFloat = 0.5 { didSet {
-        redLabel.text = String(format: "%.2f", red)
-        updateColor()
-    }}
+    var red: CGFloat = 0.5 {
+        didSet {
+            redLabel.text = String(format: "%.2f", red)
+            updateColor()
+        }
+    }
     
-    var green: CGFloat = 0.5 { didSet {
-        greenLabel.text = String(format: "%.2f", green)
-        updateColor()
-    }}
+    var green: CGFloat = 0.5 {
+        didSet {
+            greenLabel.text = String(format: "%.2f", green)
+            updateColor()
+        }
+    }
     
-    var blue: CGFloat = 0.5 { didSet {
-        blueLabel.text = String(format: "%.2f", blue)
-        updateColor()
-    }}
+    var blue: CGFloat = 0.5 {
+        didSet {
+            blueLabel.text = String(format: "%.2f", blue)
+            updateColor()
+        }
+    }
     
     
     override func viewDidLoad() {
