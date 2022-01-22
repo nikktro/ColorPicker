@@ -15,21 +15,21 @@ class ViewController: UIViewController {
     
     @IBOutlet var resultColor: UIView!
     
-    var red: CGFloat = 0.5 {
+    private var red: CGFloat = 0.5 {
         didSet {
             redLabel.text = String(format: "%.2f", red)
             updateColor()
         }
     }
     
-    var green: CGFloat = 0.5 {
+    private var green: CGFloat = 0.5 {
         didSet {
             greenLabel.text = String(format: "%.2f", green)
             updateColor()
         }
     }
     
-    var blue: CGFloat = 0.5 {
+    private var blue: CGFloat = 0.5 {
         didSet {
             blueLabel.text = String(format: "%.2f", blue)
             updateColor()
