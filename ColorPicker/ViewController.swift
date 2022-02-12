@@ -13,6 +13,10 @@ class ViewController: UIViewController {
     @IBOutlet var greenLabel: UILabel!
     @IBOutlet var blueLabel: UILabel!
     
+    @IBOutlet var redValueTF: UITextField!
+    @IBOutlet var greenValueTF: UITextField!
+    @IBOutlet var blueValueTF: UITextField!
+    
     @IBOutlet var resultColor: UIView!
     
     private var red: CGFloat = 0.5 {
@@ -55,6 +59,10 @@ class ViewController: UIViewController {
     
     @IBAction func blueSettingSlider(_ sender: UISlider) {
         blue = CGFloat(sender.value)
+    }
+    
+    @IBAction func doneButtonPressed() {
+        dismiss(animated: true)
     }
     
     private func updateColor() {
