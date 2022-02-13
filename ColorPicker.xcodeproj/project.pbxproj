@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		B1AE41AA2799FF4000CF6AF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AE41A92799FF4000CF6AF4 /* AppDelegate.swift */; };
 		B1AE41AC2799FF4000CF6AF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AE41AB2799FF4000CF6AF4 /* SceneDelegate.swift */; };
-		B1AE41AE2799FF4000CF6AF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AE41AD2799FF4000CF6AF4 /* ViewController.swift */; };
+		B1AE41AE2799FF4000CF6AF4 /* ColorSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AE41AD2799FF4000CF6AF4 /* ColorSettingsViewController.swift */; };
 		B1AE41B12799FF4000CF6AF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1AE41AF2799FF4000CF6AF4 /* Main.storyboard */; };
 		B1AE41B32799FF4300CF6AF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1AE41B22799FF4300CF6AF4 /* Assets.xcassets */; };
 		B1AE41B62799FF4300CF6AF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1AE41B42799FF4300CF6AF4 /* LaunchScreen.storyboard */; };
+		B1F55BFD27B94C6E008DC734 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F55BFC27B94C6E008DC734 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B1AE41A62799FF4000CF6AF4 /* ColorPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1AE41A92799FF4000CF6AF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1AE41AB2799FF4000CF6AF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B1AE41AD2799FF4000CF6AF4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B1AE41AD2799FF4000CF6AF4 /* ColorSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSettingsViewController.swift; sourceTree = "<group>"; };
 		B1AE41B02799FF4000CF6AF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B1AE41B22799FF4300CF6AF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1AE41B52799FF4300CF6AF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1AE41B72799FF4300CF6AF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1F55BFC27B94C6E008DC734 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				B1AE41A92799FF4000CF6AF4 /* AppDelegate.swift */,
 				B1AE41AB2799FF4000CF6AF4 /* SceneDelegate.swift */,
-				B1AE41AD2799FF4000CF6AF4 /* ViewController.swift */,
+				B1AE41AD2799FF4000CF6AF4 /* ColorSettingsViewController.swift */,
+				B1F55BFC27B94C6E008DC734 /* MainViewController.swift */,
 				B1AE41AF2799FF4000CF6AF4 /* Main.storyboard */,
 				B1AE41B22799FF4300CF6AF4 /* Assets.xcassets */,
 				B1AE41B42799FF4300CF6AF4 /* LaunchScreen.storyboard */,
@@ -138,9 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1AE41AE2799FF4000CF6AF4 /* ViewController.swift in Sources */,
+				B1AE41AE2799FF4000CF6AF4 /* ColorSettingsViewController.swift in Sources */,
 				B1AE41AA2799FF4000CF6AF4 /* AppDelegate.swift in Sources */,
 				B1AE41AC2799FF4000CF6AF4 /* SceneDelegate.swift in Sources */,
+				B1F55BFD27B94C6E008DC734 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

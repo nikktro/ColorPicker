@@ -8,15 +8,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="ifZ-VH-KI5">
             <objects>
-                <viewController id="SRO-ER-cge" sceneMemberID="viewController">
+                <viewController id="SRO-ER-cge" customClass="MainViewController" customModule="ColorPicker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wag-Zv-cgz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="f3H-jO-7On"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="69R-m7-MdV">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="GbE-hy-Vju">
@@ -30,10 +30,10 @@
             </objects>
             <point key="canvasLocation" x="159" y="137"/>
         </scene>
-        <!--View Controller-->
+        <!--Color Settings View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ColorPicker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ColorSettingsViewController" customModule="ColorPicker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -182,10 +182,13 @@
                     </view>
                     <connections>
                         <outlet property="blueLabel" destination="CBs-aN-zfW" id="IQ7-67-BXP"/>
+                        <outlet property="blueSlider" destination="sEP-62-Rjv" id="ldB-Ms-IuK"/>
                         <outlet property="blueValueTF" destination="KyR-sP-Efq" id="mYw-Jn-abp"/>
                         <outlet property="greenLabel" destination="1WZ-83-2E4" id="8ba-Wd-DEx"/>
+                        <outlet property="greenSlider" destination="KeH-jc-65G" id="t8E-PR-lsK"/>
                         <outlet property="greenValueTF" destination="9e6-27-T3j" id="JFc-e0-C7F"/>
                         <outlet property="redLabel" destination="Nbr-0C-acN" id="lCJ-Kg-Akn"/>
+                        <outlet property="redSlider" destination="RgB-ch-DuA" id="6bg-v9-N1I"/>
                         <outlet property="redValueTF" destination="dh7-UA-n8t" id="W2I-uI-vnf"/>
                         <outlet property="resultColor" destination="Ghy-EQ-GSI" id="00M-8J-5dl"/>
                     </connections>
