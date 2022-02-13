@@ -26,6 +26,7 @@ class ColorSettingsViewController: UIViewController {
     
     // MARK: Properties
     var viewColor: UIColor!
+    var delegate: ColorSettingsViewControllerDelegate!
     
     // MARK: Private Properties
     private var red: CGFloat = 0.5 {
@@ -78,6 +79,8 @@ class ColorSettingsViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed() {
+        let newColor = UIColor(red: red,green: green, blue: blue, alpha: 1.0)
+        delegate.updateBackground(color: newColor)
         dismiss(animated: true)
     }
     
