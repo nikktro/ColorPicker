@@ -39,6 +39,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B1090B7827B9DD6600CE0E93 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B1AE41A92799FF4000CF6AF4 /* AppDelegate.swift */,
+				B1AE41AB2799FF4000CF6AF4 /* SceneDelegate.swift */,
+				B1AE41B72799FF4300CF6AF4 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B1090B7927B9DD7700CE0E93 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B1AE41AD2799FF4000CF6AF4 /* ColorSettingsViewController.swift */,
+				B1F55BFC27B94C6E008DC734 /* MainViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B1090B7A27B9DD8900CE0E93 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B1AE41AF2799FF4000CF6AF4 /* Main.storyboard */,
+				B1AE41B42799FF4300CF6AF4 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B1090B7B27B9DD9C00CE0E93 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B1AE41B22799FF4300CF6AF4 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		B1AE419D2799FF4000CF6AF4 = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +94,10 @@
 		B1AE41A82799FF4000CF6AF4 /* ColorPicker */ = {
 			isa = PBXGroup;
 			children = (
-				B1AE41A92799FF4000CF6AF4 /* AppDelegate.swift */,
-				B1AE41AB2799FF4000CF6AF4 /* SceneDelegate.swift */,
-				B1AE41AD2799FF4000CF6AF4 /* ColorSettingsViewController.swift */,
-				B1F55BFC27B94C6E008DC734 /* MainViewController.swift */,
-				B1AE41AF2799FF4000CF6AF4 /* Main.storyboard */,
-				B1AE41B22799FF4300CF6AF4 /* Assets.xcassets */,
-				B1AE41B42799FF4300CF6AF4 /* LaunchScreen.storyboard */,
-				B1AE41B72799FF4300CF6AF4 /* Info.plist */,
+				B1090B7827B9DD6600CE0E93 /* App */,
+				B1090B7927B9DD7700CE0E93 /* ViewControllers */,
+				B1090B7A27B9DD8900CE0E93 /* Storyboards */,
+				B1090B7B27B9DD9C00CE0E93 /* Resources */,
 			);
 			path = ColorPicker;
 			sourceTree = "<group>";
@@ -295,7 +327,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T2HBBQ5KF9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ColorPicker/Info.plist;
+				INFOPLIST_FILE = ColorPicker/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -324,7 +356,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T2HBBQ5KF9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ColorPicker/Info.plist;
+				INFOPLIST_FILE = ColorPicker/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
