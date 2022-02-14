@@ -19,8 +19,10 @@ class MainViewController: UIViewController {
         colorSettingsVC.viewColor = view.backgroundColor
         colorSettingsVC.delegate = self
     }
+    
 }
 
+// MARK: Protocol Methods
 extension MainViewController: ColorSettingsViewControllerDelegate {
     func updateBackground(color: UIColor) {
         view.backgroundColor = color

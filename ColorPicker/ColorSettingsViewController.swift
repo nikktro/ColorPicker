@@ -62,6 +62,10 @@ class ColorSettingsViewController: UIViewController {
         green = viewColor.greenValue
         blue = viewColor.blueValue
         
+        addDoneButton(for: redValueTF)
+        addDoneButton(for: greenValueTF)
+        addDoneButton(for: blueValueTF)
+        
         resultColor.layer.cornerRadius = 10
     }
     
@@ -79,8 +83,11 @@ class ColorSettingsViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed() {
+        view.endEditing(true)
+        
         let newColor = UIColor(red: red,green: green, blue: blue, alpha: 1.0)
         delegate.updateBackground(color: newColor)
+        
         dismiss(animated: true)
     }
     
@@ -95,15 +102,38 @@ class ColorSettingsViewController: UIViewController {
     }
     
     private func updateSliders() {
-        redSlider.value = Float(red) //TODO: use redLabel.text
-        greenSlider.value = Float(green)
-        blueSlider.value = Float(blue)
+        redSlider.value = Float(round(red * 100) / 100)
+        greenSlider.value = Float(round(green * 100) / 100)
+        blueSlider.value = Float(round(blue * 100) / 100)
     }
     
     private func updateTextFields() {
         redValueTF.text = redLabel.text
         greenValueTF.text = greenLabel.text
         blueValueTF.text = blueLabel.text
+    }
+    
+    private func addDoneButton(for textField: UITextField) {
+        let toolbarDone = UIToolbar()
+        toolbarDone.sizeToFit()
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+                                        target: nil,
+                                        action: nil
+        )
+
+        let barButtonDone = UIBarButtonItem(
+            barButtonSystemItem: UIBarButtonItem.SystemItem.done,
+            target: self,
+            action: #selector(dismissKeyboard)
+        )
+        
+        toolbarDone.items = [flexSpace, barButtonDone]
+        textField.inputAccessoryView = toolbarDone
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
     }
     
 }
@@ -125,8 +155,8 @@ extension ColorSettingsViewController: UITextFieldDelegate {
     }
     
     private func getValue(from textField: UITextField) -> CGFloat {
-        guard let textValue = textField.text else { return 1.0 }
-        guard let doubleValue = Double(textValue) else { return 1.0 }
+        guard let textValue = textField.text else { return 1 }
+        guard let doubleValue = Double(textValue) else { return 1 }
         if doubleValue < 0 { return 0 }
         if doubleValue > 1 { return 1 }
         return CGFloat(doubleValue)
