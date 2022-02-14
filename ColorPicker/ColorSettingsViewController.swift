@@ -95,10 +95,12 @@ class ColorSettingsViewController: UIViewController {
     private func updateColor() {
         updateSliders()
         updateTextFields()
-        resultColor.backgroundColor = UIColor(red: red,
-                                              green: green,
-                                              blue: blue,
-                                              alpha: 1.0)
+        resultColor.backgroundColor = UIColor(
+            red: red,
+            green: green,
+            blue: blue,
+            alpha: 1.0
+        )
     }
     
     private func updateSliders() {
@@ -117,9 +119,10 @@ class ColorSettingsViewController: UIViewController {
         let toolbarDone = UIToolbar()
         toolbarDone.sizeToFit()
         
-        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
-                                        target: nil,
-                                        action: nil
+        let flexSpace = UIBarButtonItem(
+            barButtonSystemItem: .flexibleSpace,
+            target: nil,
+            action: nil
         )
 
         let barButtonDone = UIBarButtonItem(
@@ -138,7 +141,25 @@ class ColorSettingsViewController: UIViewController {
     
 }
 
-// MARK: Extensions
+// MARK: Alert Controller
+extension ColorSettingsViewController {
+    private func showNotification(title: String, message: String, handler: ((UIAlertAction) -> Void)? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: handler)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+}
+
+// MARK: Hide keyboard on tap
+extension ColorSettingsViewController {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+}
+
+// MARK: UITextFieldDelegate
 extension ColorSettingsViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         switch textField {
@@ -157,12 +178,27 @@ extension ColorSettingsViewController: UITextFieldDelegate {
     private func getValue(from textField: UITextField) -> CGFloat {
         guard let textValue = textField.text else { return 1 }
         guard let doubleValue = Double(textValue) else { return 1 }
-        if doubleValue < 0 { return 0 }
-        if doubleValue > 1 { return 1 }
+        if doubleValue < 0 {
+            showNotification(
+                title: "Warning!",
+                message: "Valid values are from 0.00 to 1.00"
+            )
+            return 0
+        }
+        
+        if doubleValue > 1 {
+            showNotification(
+                title: "Warning!",
+                message: "Valid values are from 0.00 to 1.00"
+            )
+            return 1
+        }
+        
         return CGFloat(doubleValue)
     }
 }
 
+// MARK: UIColor extension
 extension UIColor {
     var redValue: CGFloat { return CIColor(color: self).red }
     var greenValue: CGFloat { return CIColor(color: self).green }
