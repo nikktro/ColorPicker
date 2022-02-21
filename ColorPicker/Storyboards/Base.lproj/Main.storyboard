@@ -107,21 +107,21 @@
                                                         <rect key="frame" x="-2" y="0.0" width="190" height="35"/>
                                                         <color key="minimumTrackTintColor" red="0.96848052740000001" green="0.1225513669" blue="0.11109583169999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <connections>
-                                                            <action selector="redSettingSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="rat-Mq-C16"/>
+                                                            <action selector="rgbSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="sXS-qk-eTG"/>
                                                         </connections>
                                                     </slider>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="KeH-jc-65G">
                                                         <rect key="frame" x="-2" y="50" width="190" height="35"/>
                                                         <color key="minimumTrackTintColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
-                                                            <action selector="greenSettingSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="c59-tB-frv"/>
+                                                            <action selector="rgbSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="4RY-uo-XAY"/>
                                                         </connections>
                                                     </slider>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="sEP-62-Rjv">
                                                         <rect key="frame" x="-2" y="100" width="190" height="35"/>
                                                         <color key="minimumTrackTintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
-                                                            <action selector="blueSettingSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="aQL-5t-pUB"/>
+                                                            <action selector="rgbSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="Wif-DQ-la1"/>
                                                         </connections>
                                                     </slider>
                                                 </subviews>

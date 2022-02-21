@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ColorSettingsViewControllerDelegate {
-    func updateBackground(color: UIColor)
+    func setColor(_ color: UIColor)
 }
 
 class MainViewController: UIViewController {
@@ -16,15 +16,15 @@ class MainViewController: UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let colorSettingsVC = segue.destination as? ColorSettingsViewController else { return }
-        colorSettingsVC.viewColor = view.backgroundColor
         colorSettingsVC.delegate = self
+        colorSettingsVC.viewColor = view.backgroundColor
     }
     
 }
 
-// MARK: Protocol Methods
+// MARK: - ColorSettings Delegate
 extension MainViewController: ColorSettingsViewControllerDelegate {
-    func updateBackground(color: UIColor) {
+    func setColor(_ color: UIColor) {
         view.backgroundColor = color
     }
 }
