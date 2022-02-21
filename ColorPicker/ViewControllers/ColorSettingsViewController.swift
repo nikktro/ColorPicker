@@ -28,28 +28,6 @@ class ColorSettingsViewController: UIViewController {
     var viewColor: UIColor!
     var delegate: ColorSettingsViewControllerDelegate!
     
-    // MARK: Private Properties
-    private var red: CGFloat = 0.5 {
-        didSet {
-            redLabel.text = String(format: "%.2f", red)
-            updateColor()
-        }
-    }
-    
-    private var green: CGFloat = 0.5 {
-        didSet {
-            greenLabel.text = String(format: "%.2f", green)
-            updateColor()
-        }
-    }
-    
-    private var blue: CGFloat = 0.5 {
-        didSet {
-            blueLabel.text = String(format: "%.2f", blue)
-            updateColor()
-        }
-    }
-    
     // MARK: Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,9 +36,11 @@ class ColorSettingsViewController: UIViewController {
         greenValueTF.delegate = self
         blueValueTF.delegate = self
         
-        red = viewColor.redValue
-        green = viewColor.greenValue
-        blue = viewColor.blueValue
+        redSlider.value = Float(viewColor.redValue)
+        greenSlider.value = Float(viewColor.greenValue)
+        blueSlider.value = Float(viewColor.blueValue)
+        
+        updateColor()
         
         addDoneButton(for: redValueTF)
         addDoneButton(for: greenValueTF)
@@ -71,15 +51,18 @@ class ColorSettingsViewController: UIViewController {
     
     // MARK: IBActions
     @IBAction func redSettingSlider(_ sender: UISlider) {
-        red = CGFloat(sender.value)
+        redLabel.text = String(format: "%.2f", sender.value)
+        updateColor()
     }
     
     @IBAction func greenSettingSlider(_ sender: UISlider) {
-        green = CGFloat(sender.value)
+        greenLabel.text = String(format: "%.2f", sender.value)
+        updateColor()
     }
     
     @IBAction func blueSettingSlider(_ sender: UISlider) {
-        blue = CGFloat(sender.value)
+        blueLabel.text = String(format: "%.2f", sender.value)
+        updateColor()
     }
     
     @IBAction func doneButtonPressed() {
@@ -91,23 +74,19 @@ class ColorSettingsViewController: UIViewController {
     
     // MARK: Private Methods
     private func updateColor() {
-        updateSliders()
-        updateTextFields()
+        updateLabelValues()
         resultColor.backgroundColor = UIColor(
-            red: red,
-            green: green,
-            blue: blue,
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
             alpha: 1.0
         )
     }
     
-    private func updateSliders() {
-        redSlider.value = Float(round(red * 100) / 100)
-        greenSlider.value = Float(round(green * 100) / 100)
-        blueSlider.value = Float(round(blue * 100) / 100)
-    }
-    
-    private func updateTextFields() {
+    private func updateLabelValues() {
+        redLabel.text = String(format: "%.2f", redSlider.value)
+        greenLabel.text = String(format: "%.2f", greenSlider.value)
+        blueLabel.text = String(format: "%.2f", blueSlider.value)
         redValueTF.text = redLabel.text
         greenValueTF.text = greenLabel.text
         blueValueTF.text = blueLabel.text
@@ -162,18 +141,19 @@ extension ColorSettingsViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         switch textField {
         case redValueTF:
-            red = getValue(from: textField)
+            redSlider.value = getValue(from: textField)
+            updateColor()
         case greenValueTF:
-            green = getValue(from: textField)
-        case blueValueTF:
-            blue = getValue(from: textField)
+            greenSlider.value = getValue(from: textField)
+            updateColor()
         default:
-            break
+            blueSlider.value = getValue(from: textField)
+            updateColor()
         }
         
     }
     
-    private func getValue(from textField: UITextField) -> CGFloat {
+    private func getValue(from textField: UITextField) -> Float {
         guard let textValue = textField.text else { return 1 }
         guard let doubleValue = Double(textValue) else { return 1 }
         if doubleValue < 0 {
@@ -192,7 +172,7 @@ extension ColorSettingsViewController: UITextFieldDelegate {
             return 1
         }
         
-        return CGFloat(doubleValue)
+        return Float(doubleValue)
     }
 }
 
