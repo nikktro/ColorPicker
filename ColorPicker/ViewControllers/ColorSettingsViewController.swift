@@ -84,9 +84,7 @@ class ColorSettingsViewController: UIViewController {
     
     @IBAction func doneButtonPressed() {
         view.endEditing(true)
-        
-        let newColor = UIColor(red: red,green: green, blue: blue, alpha: 1.0)
-        delegate.updateBackground(color: newColor)
+        delegate.updateBackground(color: resultColor.backgroundColor ?? .white)
         
         dismiss(animated: true)
     }
