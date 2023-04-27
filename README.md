@@ -1,6 +1,6 @@
 # ColorPicker
 
-
+Test Application from lessons 2.02 and 2.06
 
 A screen in which you can change the background color of the view using sliders. The value of each slider is displayed in the corresponding label. The color of the slider to the left of the slider corresponds to the color for which it is responsible. The application is built on UIKit
 
